@@ -1,0 +1,147 @@
+/* Referência: https://3dtransforms.desandro.com/cube */
+
+.container {
+  widows: 20rem;
+  height: 20rem;
+
+  perspective: 60rem;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  transform-style: preserve-3d;
+
+  transform: translateZ(-10rem);
+
+  transition: transform 0.8s;
+}
+
+.cube.show-front {
+  transform: translateZ(-10rem) rotateY(0deg);
+}
+
+.cube.show-back {
+  transform: translateZ(-10rem) rotateY(-180deg);
+}
+
+.cube.show-right {
+  transform: translateZ(-10rem) rotateY(-90deg);
+}
+
+.cube.show-left {
+  transform: translateZ(-10rem) rotateY(90deg);
+}
+
+.cube.show-top {
+  transform: translateZ(-10rem) rotateX(-90deg);
+}
+
+.cube.show-bottom {
+  transform: translateZ(-10rem) rotateX(90deg);
+}
+
+.cube-face {
+  width: 20rem;
+  height: 20rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 4.2rem;
+  font-weight: 600;
+
+  border: 2px solid #000;
+
+  position: absolute;
+
+  color: var(--text);
+}
+
+.front {
+  transform: rotateY(0deg) translateZ(10rem);
+  background: var(--front);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(10rem);
+  background: var(--back);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(10rem);
+  background: var(--right);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(10rem);
+  background: var(--left);
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(10rem);
+  background: var(--top);
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(10rem);
+  background: var(--bottom);
+}
+
+.buttons {
+  width: 60rem;
+
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons button {
+  border: 0;
+
+  width: 8rem;
+  height: 4rem;
+
+  color: var(--text);
+
+  font-size: 1.6rem;
+  font-weight: 400;
+
+  border-radius: 1rem;
+}
+
+.buttons button.cube-front {
+  background: var(--front);
+}
+
+.buttons button.cube-back {
+  background: var(--back);
+}
+
+.buttons button.cube-right {
+  background: var(--right);
+}
+
+.buttons button.cube-left {
+  background: var(--left);
+}
+
+.buttons button.cube-top {
+  background: var(--top);
+}
+
+.buttons button.cube-bottom {
+  background: var(--bottom);
+}
